@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dty6fxtd6b3e"]
+
+[ext_resource type="PackedScene" uid="uid://cathltddif3ej" path="res://sus.glb" id="1_4uqrf"]
+[ext_resource type="Script" path="res://addons/scene-preview-extractor/screen_grab.gd" id="1_fpxwn"]
+[ext_resource type="Material" uid="uid://dp6u8fwrg86l7" path="res://sus.material" id="2_fo5uo"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_0b6we"]
+turbidity = 15.13
+ground_color = Color(0.85098, 1, 0.792157, 1)
+energy_multiplier = 2.0
+
+[sub_resource type="Sky" id="Sky_tgh0j"]
+sky_material = SubResource("PhysicalSkyMaterial_0b6we")
+
+[sub_resource type="Environment" id="Environment_c0qgs"]
+background_mode = 2
+sky = SubResource("Sky_tgh0j")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_white = 0.8
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_fpxwn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c0qgs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.588138, -0.399272, 0.703332, -1.77636e-15, 0.869641, 0.493684, -0.80876, -0.290354, 0.511469, 2.66679, 2.35301, 1.65331)
+
+[node name="sus" parent="." instance=ExtResource("1_4uqrf")]
+
+[node name="Suzanne" parent="sus" index="0"]
+material_override = ExtResource("2_fo5uo")
+
+[editable path="sus"]
