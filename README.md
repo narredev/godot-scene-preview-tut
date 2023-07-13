@@ -1,5 +1,6 @@
-# scene-preview-tut
- A Godot 4.1 tutorial on how to get the scene preview texture
+# godot-scene-preview-tut
+
+A Godot 4.1 addon to get the scene preview texture
 
 This repository is the code for my youtube tutorial:
 
